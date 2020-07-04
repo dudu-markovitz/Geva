@@ -51,15 +51,19 @@ random.shuffle(product)
            
 stat = Stat()
 
-for x, y in product:
+for i, xy in enumerate(product):
     
+    x, y = xy
     stat.increase('01) questions')
     
     attempts = 0
     
     while True:
         
-        print(f'{x} x {y} = ?')
+        print(f'Challenge {i+1}')
+        print('-' * 15)
+        print(f'{x} x {y} =')
+        
         answer = input ()
         
         if answer == 'quit':
