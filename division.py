@@ -42,6 +42,7 @@ range_1_start = get_int_input('range 1, start (default = 1):', error_msg, 1)
 range_1_end = get_int_input('range 1, end (default = 10):', error_msg, 10)
 range_2_start = get_int_input('range 2, start (default = 1):', error_msg, 1)
 range_2_end = get_int_input('range 2, end (default = 10):', error_msg, 10)
+print()
 
 range1 = (range_1_start, range_1_end + 1)
 range2 = (range_2_start, range_2_end + 1)
@@ -51,7 +52,9 @@ random.shuffle(product)
            
 stat = Stat()
 
-for x, y in product:
+for i, xy in enumerate(product):
+    
+    x, y = xy
     
     stat.increase('01) questions')
     
@@ -59,7 +62,9 @@ for x, y in product:
     
     while True:
         
-        print(f'{x*y} / {y} = ?')
+        print(f'Challenge {i+1}')
+        print('-' * 15)        
+        print(f'{x*y} / {y} =')
         answer = input ()
         
         if answer == 'quit':
